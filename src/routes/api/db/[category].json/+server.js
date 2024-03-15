@@ -1,6 +1,7 @@
-import { SITE_URL } from "$lib/constants.js";
+// import { SITE_URL } from "$lib/constants.js";
 import { json } from "@sveltejs/kit";
 
+export const prerender = true
 export const GET = async ({ params: { category }, fetch, setHeaders }) => {
   let data = [];
   try {
@@ -10,7 +11,7 @@ export const GET = async ({ params: { category }, fetch, setHeaders }) => {
     console.error("info", error);
   }
   setHeaders({
-    "Access-Control-Allow-Origin": SITE_URL,
+    "Access-Control-Allow-Origin":"firefortune.com",
     "cache-control": "max-age=31104000",
   });
 
